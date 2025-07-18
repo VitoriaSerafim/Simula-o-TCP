@@ -1,0 +1,357 @@
+=== RELATÓRIO DE COMPARAÇÃO TCP RENO vs BBR (2x2 Fluxos) ===
+Data/Hora: 2025-07-18 13:12:50
+==================================================
+
+h_reno1 TCP Config: net.ipv4.tcp_congestion_control = reno
+h_reno2 TCP Config: net.ipv4.tcp_congestion_control = reno
+h_bbr1 TCP Config: net.ipv4.tcp_congestion_control = bbr
+h_bbr2 TCP Config: net.ipv4.tcp_congestion_control = bbr
+
+=== LATÊNCIA H_Reno1 ===
+rtt min/avg/max/mdev = 30.579/31.100/31.413/0.252 ms
+=== LATÊNCIA H_Reno2 ===
+rtt min/avg/max/mdev = 30.578/31.045/31.453/0.245 ms
+=== LATÊNCIA H_BBR1 ===
+rtt min/avg/max/mdev = 30.731/30.950/31.210/0.183 ms
+=== LATÊNCIA H_BBR2 ===
+rtt min/avg/max/mdev = 30.636/31.002/31.357/0.213 ms
+=== IPERF3 H_Reno1_Throughput ===
+Connecting to host 10.0.0.5, port 5001
+[  5] local 10.0.0.1 port 51382 connected to 10.0.0.5 port 5001
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.76 MBytes  14.7 Mbits/sec    4   48.1 KBytes       
+[  5]   1.00-2.00   sec  1.24 MBytes  10.4 Mbits/sec    1   58.0 KBytes       
+[  5]   2.00-3.00   sec   954 KBytes  7.79 Mbits/sec    4   39.6 KBytes       
+[  5]   3.00-4.00   sec  1.24 MBytes  10.5 Mbits/sec    0   69.3 KBytes       
+[  5]   4.00-5.00   sec   954 KBytes  7.81 Mbits/sec    0   89.1 KBytes       
+[  5]   5.00-6.00   sec  1.24 MBytes  10.4 Mbits/sec    0    106 KBytes       
+[  5]   6.00-7.00   sec  1.30 MBytes  11.0 Mbits/sec    4   52.3 KBytes       
+[  5]   7.00-8.00   sec   954 KBytes  7.79 Mbits/sec    6   43.8 KBytes       
+[  5]   8.00-9.00   sec  1018 KBytes  8.36 Mbits/sec    5   17.0 KBytes       
+[  5]   9.00-10.00  sec   954 KBytes  7.82 Mbits/sec    0   55.1 KBytes       
+[  5]  10.00-11.00  sec   764 KBytes  6.24 Mbits/sec    6   24.0 KBytes       
+[  5]  11.00-12.00  sec   636 KBytes  5.21 Mbits/sec    3   38.2 KBytes       
+[  5]  12.00-13.00  sec   954 KBytes  7.83 Mbits/sec    4   32.5 KBytes       
+[  5]  13.00-14.00  sec   636 KBytes  5.22 Mbits/sec    6   25.5 KBytes       
+[  5]  14.00-15.00  sec  1.24 MBytes  10.4 Mbits/sec    0   60.8 KBytes       
+[  5]  15.00-16.00  sec   954 KBytes  7.80 Mbits/sec    2   58.0 KBytes       
+[  5]  16.00-17.00  sec  1.24 MBytes  10.4 Mbits/sec    0   82.0 KBytes       
+[  5]  17.00-18.01  sec  1018 KBytes  8.33 Mbits/sec    4   29.7 KBytes       
+[  5]  18.01-19.00  sec  1.24 MBytes  10.5 Mbits/sec    2   42.4 KBytes       
+[  5]  19.00-20.00  sec   954 KBytes  7.81 Mbits/sec    0   72.1 KBytes       
+[  5]  20.00-21.00  sec  1.30 MBytes  11.0 Mbits/sec    2   65.0 KBytes       
+[  5]  21.00-22.00  sec   954 KBytes  7.82 Mbits/sec    3   24.0 KBytes       
+[  5]  22.00-23.00  sec  1.30 MBytes  11.0 Mbits/sec    2   29.7 KBytes       
+[  5]  23.00-24.00  sec  1018 KBytes  8.34 Mbits/sec    2   42.4 KBytes       
+[  5]  24.00-25.00  sec   636 KBytes  5.20 Mbits/sec    7   11.3 KBytes       
+[  5]  25.00-26.00  sec   636 KBytes  5.22 Mbits/sec    7   9.90 KBytes       
+[  5]  26.00-27.00  sec   636 KBytes  5.22 Mbits/sec    0   50.9 KBytes       
+[  5]  27.00-28.00  sec  1.24 MBytes  10.4 Mbits/sec    2   49.5 KBytes       
+[  5]  28.00-29.00  sec   954 KBytes  7.82 Mbits/sec    2   56.6 KBytes       
+[  5]  29.00-30.00  sec   954 KBytes  7.82 Mbits/sec    5   25.5 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec  30.5 MBytes  8.54 Mbits/sec   83             sender
+[  5]   0.00-30.03  sec  29.9 MBytes  8.34 Mbits/sec                  receiver
+
+iperf Done.
+
+=== IPERF3 H_Reno2_Throughput ===
+Connecting to host 10.0.0.5, port 5001
+[  5] local 10.0.0.2 port 45044 connected to 10.0.0.5 port 5001
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.50   sec  77.8 KBytes   424 Kbits/sec    0   14.1 KBytes       
+[  5]   1.50-2.00   sec  2.43 MBytes  40.9 Mbits/sec    0    515 KBytes       
+[  5]   2.00-3.00   sec  6.12 MBytes  51.3 Mbits/sec    0   1.65 MBytes       
+[  5]   3.00-4.00   sec  5.00 MBytes  41.9 Mbits/sec    0   2.79 MBytes       
+[  5]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    0   3.92 MBytes       
+[  5]   5.00-6.00   sec  1.25 MBytes  10.5 Mbits/sec    0   3.73 MBytes       
+[  5]   6.00-7.00   sec  1.25 MBytes  10.5 Mbits/sec    0   3.16 MBytes       
+[  5]   7.00-8.00   sec  1.25 MBytes  10.5 Mbits/sec    0   2.59 MBytes       
+[  5]   8.00-9.00   sec  0.00 Bytes  0.00 bits/sec    6   2.09 MBytes       
+[  5]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    5   2.08 MBytes       
+[  5]  10.00-11.00  sec  1.25 MBytes  10.5 Mbits/sec    2   1.73 MBytes       
+[  5]  11.00-12.00  sec  2.50 MBytes  21.0 Mbits/sec    2   1.16 MBytes       
+[  5]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    3   1.04 MBytes       
+[  5]  13.00-14.00  sec  2.50 MBytes  21.0 Mbits/sec    4    663 KBytes       
+[  5]  14.00-15.00  sec  2.50 MBytes  21.0 Mbits/sec    1    420 KBytes       
+[  5]  15.00-16.00  sec  1.25 MBytes  10.5 Mbits/sec    2    223 KBytes       
+[  5]  16.00-17.00  sec  1.25 MBytes  10.5 Mbits/sec    1   90.5 KBytes       
+[  5]  17.00-18.00  sec  1.25 MBytes  10.5 Mbits/sec    6   32.5 KBytes       
+[  5]  18.00-19.00  sec  1.25 MBytes  10.5 Mbits/sec    2   48.1 KBytes       
+[  5]  19.00-20.00  sec  1.25 MBytes  10.5 Mbits/sec    0   74.9 KBytes       
+[  5]  20.00-21.00  sec  0.00 Bytes  0.00 bits/sec    4   39.6 KBytes       
+[  5]  21.00-22.00  sec  1.25 MBytes  10.5 Mbits/sec    6   31.1 KBytes       
+[  5]  22.00-23.00  sec  1.25 MBytes  10.5 Mbits/sec    4   26.9 KBytes       
+[  5]  23.00-24.00  sec  0.00 Bytes  0.00 bits/sec    2   50.9 KBytes       
+[  5]  24.00-25.00  sec  1.25 MBytes  10.5 Mbits/sec    4   21.2 KBytes       
+[  5]  25.00-26.00  sec  1.25 MBytes  10.5 Mbits/sec    2   35.4 KBytes       
+[  5]  26.00-27.00  sec  1.25 MBytes  10.5 Mbits/sec    0   67.9 KBytes       
+[  5]  27.00-28.00  sec  1.25 MBytes  10.5 Mbits/sec    0   89.1 KBytes       
+[  5]  28.00-29.00  sec  1.25 MBytes  10.5 Mbits/sec    0    106 KBytes       
+[  5]  29.00-30.00  sec  1.25 MBytes  10.5 Mbits/sec    3   52.3 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec  42.4 MBytes  11.8 Mbits/sec   59             sender
+[  5]   0.00-30.05  sec  31.0 MBytes  8.64 Mbits/sec                  receiver
+
+iperf Done.
+
+=== IPERF3 H_BBR1_Throughput ===
+Connecting to host 10.0.0.5, port 5001
+[  5] local 10.0.0.3 port 53410 connected to 10.0.0.5 port 5001
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.79 MBytes  15.0 Mbits/sec    0   87.7 KBytes       
+[  5]   1.00-2.00   sec  1.30 MBytes  10.9 Mbits/sec    0   87.7 KBytes       
+[  5]   2.00-3.00   sec  1.30 MBytes  10.9 Mbits/sec    0   87.7 KBytes       
+[  5]   3.00-4.00   sec   891 KBytes  7.29 Mbits/sec    2   87.7 KBytes       
+[  5]   4.00-5.00   sec  1.30 MBytes  11.0 Mbits/sec    5   87.7 KBytes       
+[  5]   5.00-6.00   sec  1.30 MBytes  10.9 Mbits/sec    2   90.5 KBytes       
+[  5]   6.00-7.00   sec   891 KBytes  7.30 Mbits/sec    5   87.7 KBytes       
+[  5]   7.00-8.00   sec  1.30 MBytes  10.9 Mbits/sec    2   87.7 KBytes       
+[  5]   8.00-9.00   sec   891 KBytes  7.30 Mbits/sec    0   90.5 KBytes       
+[  5]   9.00-10.01  sec  1.30 MBytes  10.9 Mbits/sec    0   87.7 KBytes       
+[  5]  10.01-11.00  sec   891 KBytes  7.32 Mbits/sec    2   87.7 KBytes       
+[  5]  11.00-12.00  sec  1.30 MBytes  11.0 Mbits/sec    0   87.7 KBytes       
+[  5]  12.00-13.00  sec   891 KBytes  7.32 Mbits/sec    4   87.7 KBytes       
+[  5]  13.00-14.00  sec  1.30 MBytes  10.9 Mbits/sec    4   87.7 KBytes       
+[  5]  14.00-15.00  sec   891 KBytes  7.29 Mbits/sec    6   83.4 KBytes       
+[  5]  15.00-16.00  sec  1.37 MBytes  11.5 Mbits/sec    0   87.7 KBytes       
+[  5]  16.00-17.00  sec  1.30 MBytes  11.0 Mbits/sec    6   90.5 KBytes       
+[  5]  17.00-18.00  sec   891 KBytes  7.27 Mbits/sec    2   87.7 KBytes       
+[  5]  18.00-19.00  sec  1.30 MBytes  11.0 Mbits/sec    2   87.7 KBytes       
+[  5]  19.00-20.00  sec   891 KBytes  7.29 Mbits/sec    4   90.5 KBytes       
+[  5]  20.00-21.00  sec  1.30 MBytes  11.0 Mbits/sec    2   90.5 KBytes       
+[  5]  21.00-22.00  sec   891 KBytes  7.28 Mbits/sec    4   87.7 KBytes       
+[  5]  22.00-23.00  sec  1.30 MBytes  11.0 Mbits/sec    2   90.5 KBytes       
+[  5]  23.00-24.00  sec   891 KBytes  7.30 Mbits/sec    2   87.7 KBytes       
+[  5]  24.00-25.00  sec  1.30 MBytes  11.0 Mbits/sec    0   87.7 KBytes       
+[  5]  25.00-26.00  sec  1.30 MBytes  10.9 Mbits/sec    6   82.0 KBytes       
+[  5]  26.00-27.00  sec   891 KBytes  7.30 Mbits/sec    0   90.5 KBytes       
+[  5]  27.00-28.00  sec  1.30 MBytes  10.9 Mbits/sec    2   87.7 KBytes       
+[  5]  28.00-29.00  sec   891 KBytes  7.30 Mbits/sec   12   76.4 KBytes       
+[  5]  29.00-30.00  sec  1.30 MBytes  10.9 Mbits/sec    2   87.7 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec  34.5 MBytes  9.64 Mbits/sec   78             sender
+[  5]   0.00-30.06  sec  33.6 MBytes  9.38 Mbits/sec                  receiver
+
+iperf Done.
+
+=== IPERF3 H_BBR2_Throughput ===
+Connecting to host 10.0.0.5, port 5001
+[  5] local 10.0.0.4 port 40118 connected to 10.0.0.5 port 5001
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  2.17 MBytes  18.2 Mbits/sec    0   87.7 KBytes       
+[  5]   1.00-2.00   sec   891 KBytes  7.30 Mbits/sec    4   87.7 KBytes       
+[  5]   2.00-3.00   sec  1.30 MBytes  10.9 Mbits/sec    0   87.7 KBytes       
+[  5]   3.00-4.00   sec   891 KBytes  7.30 Mbits/sec   10   87.7 KBytes       
+[  5]   4.00-5.00   sec  1.30 MBytes  10.9 Mbits/sec    2   90.5 KBytes       
+[  5]   5.00-6.00   sec  1.30 MBytes  10.9 Mbits/sec    2   87.7 KBytes       
+[  5]   6.00-7.00   sec   891 KBytes  7.30 Mbits/sec    4   87.7 KBytes       
+[  5]   7.00-8.00   sec  1.30 MBytes  10.9 Mbits/sec    0   87.7 KBytes       
+[  5]   8.00-9.00   sec  1.30 MBytes  10.9 Mbits/sec    6   87.7 KBytes       
+[  5]   9.00-10.00  sec   891 KBytes  7.30 Mbits/sec    0   90.5 KBytes       
+[  5]  10.00-11.00  sec   891 KBytes  7.29 Mbits/sec    2   90.5 KBytes       
+[  5]  11.00-12.00  sec  1.30 MBytes  11.0 Mbits/sec    0   87.7 KBytes       
+[  5]  12.00-13.00  sec   891 KBytes  7.29 Mbits/sec    4   87.7 KBytes       
+[  5]  13.00-14.01  sec  1.30 MBytes  10.9 Mbits/sec    4   87.7 KBytes       
+[  5]  14.01-15.00  sec  1.30 MBytes  11.0 Mbits/sec    2   87.7 KBytes       
+[  5]  15.00-16.00  sec   891 KBytes  7.29 Mbits/sec    4   72.1 KBytes       
+[  5]  16.00-17.00  sec  1.30 MBytes  11.0 Mbits/sec    2   87.7 KBytes       
+[  5]  17.00-18.00  sec   954 KBytes  7.82 Mbits/sec    4   87.7 KBytes       
+[  5]  18.00-19.00  sec  1.30 MBytes  11.0 Mbits/sec    0   87.7 KBytes       
+[  5]  19.00-20.00  sec  1.30 MBytes  10.9 Mbits/sec    0   90.5 KBytes       
+[  5]  20.00-21.00  sec   891 KBytes  7.30 Mbits/sec    4   90.5 KBytes       
+[  5]  21.00-22.00  sec   891 KBytes  7.30 Mbits/sec    0   87.7 KBytes       
+[  5]  22.00-23.00  sec  1.30 MBytes  10.9 Mbits/sec    0   87.7 KBytes       
+[  5]  23.00-24.00  sec  1.30 MBytes  10.9 Mbits/sec    2   87.7 KBytes       
+[  5]  24.00-25.00  sec   891 KBytes  7.30 Mbits/sec    0   87.7 KBytes       
+[  5]  25.00-26.00  sec  1.30 MBytes  10.9 Mbits/sec    2   87.7 KBytes       
+[  5]  26.00-27.00  sec   891 KBytes  7.30 Mbits/sec   10   87.7 KBytes       
+[  5]  27.00-28.00  sec  1.30 MBytes  10.9 Mbits/sec    4   90.5 KBytes       
+[  5]  28.00-29.00  sec  1.30 MBytes  10.9 Mbits/sec    9   87.7 KBytes       
+[  5]  29.00-30.00  sec   891 KBytes  7.30 Mbits/sec    2   87.7 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec  34.4 MBytes  9.62 Mbits/sec   83             sender
+[  5]   0.00-31.79  sec  33.6 MBytes  8.86 Mbits/sec                  receiver
+
+iperf Done.
+
+
+--- SERVER_MONITORING Stats at 13:15:48 ---
+TCP Stats: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 0 8 0 0 0 48800 46715 1 0 84 0
+Interface Stats: servidor-eth0: 137715038   48916    0    0    0     0          0         0  3224272   46682    0    0    0     0       0          0
+
+
+> > > > > > > > 
+=== MÉTRICAS H_Reno2_Simultaneous_1 ===
+Tempo total: 0.167350s
+Tempo de conexão: 0.037803s
+Tempo de transferência: 0.069730s
+Velocidade de download: 408910.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_BBR1_Simultaneous_1 ===
+Tempo total: 0.186957s
+Tempo de conexão: 0.039438s
+Tempo de transferência: 0.077896s
+Velocidade de download: 367139.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_Reno1_Simultaneous_1 ===
+Tempo total: 0.197786s
+Tempo de conexão: 0.040921s
+Tempo de transferência: 0.074725s
+Velocidade de download: 346639.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_BBR2_Simultaneous_1 ===
+Tempo total: 0.195727s
+Tempo de conexão: 0.041816s
+Tempo de transferência: 0.081190s
+Velocidade de download: 350194.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_BBR1_Simultaneous_2 ===
+Tempo total: 0.168420s
+Tempo de conexão: 0.037911s
+Tempo de transferência: 0.069266s
+Velocidade de download: 406476.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_Reno1_Simultaneous_2 ===
+Tempo total: 0.171426s
+Tempo de conexão: 0.038372s
+Tempo de transferência: 0.069670s
+Velocidade de download: 399345.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_BBR2_Simultaneous_2 ===
+Tempo total: 0.180410s
+Tempo de conexão: 0.039589s
+Tempo de transferência: 0.072973s
+Velocidade de download: 379377.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_Reno2_Simultaneous_2 ===
+Tempo total: 0.246616s
+Tempo de conexão: 0.039314s
+Tempo de transferência: 0.070814s
+Velocidade de download: 277593.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_BBR1_Simultaneous_3 ===
+Tempo total: 0.162955s
+Tempo de conexão: 0.040039s
+Tempo de transferência: 0.071719s
+Velocidade de download: 421530.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_Reno1_Simultaneous_3 ===
+Tempo total: 0.165225s
+Tempo de conexão: 0.037724s
+Tempo de transferência: 0.069342s
+Velocidade de download: 413866.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_BBR2_Simultaneous_3 ===
+Tempo total: 0.166365s
+Tempo de conexão: 0.038965s
+Tempo de transferência: 0.070280s
+Velocidade de download: 411373.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+> > > > > > > > 
+=== MÉTRICAS H_Reno2_Simultaneous_3 ===
+Tempo total: 0.224088s
+Tempo de conexão: 0.042297s
+Tempo de transferência: 0.082674s
+Velocidade de download: 304857.000 bytes/s
+Tamanho baixado: 68288 bytes
+Código HTTP: 200
+
+
+--- SERVER_MONITORING Stats at 13:15:53 ---
+TCP Stats: 10.0.0.2 - - [18/Jul/2025 13:15:48] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.1 - - [18/Jul/2025 13:15:48] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.3 - - [18/Jul/2025 13:15:48] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.4 - - [18/Jul/2025 13:15:48] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.2 - - [18/Jul/2025 13:15:50] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.3 - - [18/Jul/2025 13:15:50] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.1 - - [18/Jul/2025 13:15:50] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.4 - - [18/Jul/2025 13:15:50] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.3 - - [18/Jul/2025 13:15:51] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.1 - - [18/Jul/2025 13:15:51] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.4 - - [18/Jul/2025 13:15:51] "GET /test_page.html HTTP/1.1" 200 -
+10.0.0.2 - - [18/Jul/2025 13:15:51] "GET /test_page.html HTTP/1.1" 200 -
+Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 0 20 0 0 0 49154 47340 7 0 84 0
+Interface Stats: servidor-eth0: 137739794   49270    0    0    0     0          0         0  4072274   47035    0    0    0     0       0          0
+
+
+--- SERVER_MONITORING Stats at 13:15:58 ---
+TCP Stats: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 0 20 0 0 0 49154 47340 7 0 84 0
+Interface Stats: servidor-eth0: 137739794   49270    0    0    0     0          0         0  4072274   47035    0    0    0     0       0          0
+
+
+--- SERVER_MONITORING Stats at 13:16:03 ---
+TCP Stats: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 0 20 0 0 0 49154 47340 7 0 84 0
+Interface Stats: servidor-eth0: 137739794   49270    0    0    0     0          0         0  4072274   47035    0    0    0     0       0          0
+
+=== LATÊNCIA H_Reno1_Final ===
+rtt min/avg/max/mdev = 30.995/32.057/38.279/2.218 ms
+=== LATÊNCIA H_Reno2_Final ===
+rtt min/avg/max/mdev = 30.742/31.952/39.269/2.457 ms
+=== LATÊNCIA H_BBR1_Final ===
+rtt min/avg/max/mdev = 30.695/31.787/37.067/1.783 ms
+=== LATÊNCIA H_BBR2_Final ===
+rtt min/avg/max/mdev = 30.639/31.565/38.611/2.360 ms
+
+=== ESTATÍSTICAS FINAIS TCP ===
+h_reno1: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 5 0 0 1 0 10992 21754 83 0 1 0
+h_reno2: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 5 0 0 1 0 11685 22585 59 0 1 0
+h_bbr1: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 5 0 0 1 0 12132 24511 78 0 1 0
+h_bbr2: Tcp: RtoAlgorithm RtoMin RtoMax MaxConn ActiveOpens PassiveOpens AttemptFails EstabResets CurrEstab InSegs OutSegs RetransSegs InErrs OutRsts InCsumErrors
+Tcp: 1 200 120000 -1 5 0 0 1 0 12113 24476 85 0 1 0
+
+=== FIM DO RELATÓRIO ===
